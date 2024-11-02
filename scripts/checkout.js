@@ -169,7 +169,7 @@ function cartQuantity()
     quantityLable.innerHTML = newQuantity;
     cartQuantity();
 
-    console.log(cart);
+    localStorage.setItem("cart",JSON.stringify(cart));
   });
  });
 
