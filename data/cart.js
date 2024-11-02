@@ -3,7 +3,7 @@ export let cart = JSON.parse(localStorage.getItem('cart'));
 if(!cart)
 {
     cart = [
-        
+     
       ];
       
 }
@@ -45,4 +45,14 @@ export function removeFromCart(productId) {
 
   cart = newCart;
   saveToStorage();
+}
+
+export function updateQunatity(productId, newQuantity)
+{
+  cart.forEach((item)=>{
+    if(item.productId== productId)
+    {
+      item.quantity = newQuantity;
+    }
+  });
 }
